@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>apply & call</title>
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+
+
+    <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+
+        <link rel="stylesheet" href="css/style.css">
+
+
+
+
+  </head>
+
+  <body>
+
+    <div class="container">
+<div class="row">
+    <div class="col-md-8 col-xs-8 col-md-offset-2 col-xs-offset-2">
+      <div class="panel panel-warning">
+        <div class="panel-heading">
+          apply
+        </div>
+        <div class="panel-body">
+          <pre id="apply1">
+function sum(num1,num2){
+  return num1 + num2;
+}
+function callSum1(num1,num2){
+  return sum.apply(this,arguments);
+}
+function callSum2(num1,num2){
+  return sum.apply(this,[num1,num2]);
+}
+</pre>
+        </div>
+        <div class="panel-footer text-right">
+          <button type="button" class="btn btn-danger btn-sm" onclick="f1()" id="apply2">alert(callSum1(5,6))</button>
+          <button type="button" class="btn btn-danger btn-sm" onclick="f2()">alert(callSum2(5,6))</button>
+        </div>
+
+        <div class="panel-body">
+          <pre id="apply4">
+          var arr = [1,2,3,4,5];
+          var max = Math.max.apply(Math,arr);
+          var min = Math.min.apply(null,arr);
+</pre>
+        </div>
+        <div class="panel-footer text-right">
+          <button type="button" class="btn btn-danger btn-sm" onclick="f5()" id="apply5">alert(max)</button>
+          <button type="button" class="btn btn-danger btn-sm" onclick="f6()" id="apply6">alert(min)</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="row">
+    <div class="col-md-8 col-xs-8 col-md-offset-2 col-xs-offset-2">
+      <div class="panel panel-warning">
+        <div class="panel-heading">
+          title
+        </div>
+        <div class="panel-body">
+          <pre>
+//
+</pre>
+        </div>
+        <div class="panel-footer text-right">
+          <button type="button" class="btn btn-danger btn-sm" onclick="f1()">btn</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<div>
+    <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+
+        <script src="js/index.js"></script>
+
+
+
+
+  </body>
+</html>
