@@ -3,12 +3,10 @@
   <head>
     <meta charset="UTF-8">
     <title>apply & call</title>
-    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
-
-
-
+<!--
     <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
-
+-->
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/style.css">
 
 
@@ -47,12 +45,22 @@ function callSum2(num1,num2){
           <pre id="apply4">
           var arr = [1,2,3,4,5];
           var max = Math.max.apply(Math,arr);
-          var min = Math.min.apply(null,arr);
-</pre>
+          var min = Math.min.apply(max,arr);</pre>
         </div>
         <div class="panel-footer text-right">
           <button type="button" class="btn btn-danger btn-sm" onclick="f5()" id="apply5">alert(max)</button>
           <button type="button" class="btn btn-danger btn-sm" onclick="f6()" id="apply6">alert(min)</button>
+        </div>
+
+        <div class="panel-body">
+          <pre id="apply7">
+var arr1 = [1,2,3];
+var arr2 = ["Selina","Hebe","Ella"];
+Array.prototype.push.apply(arr1,arr2);</pre>
+        </div>
+        <div class="panel-footer text-right">
+          <button type="button" class="btn btn-danger btn-sm" onclick="f8()" id="apply8">alert(arr1)</button>
+          <button type="button" class="btn btn-danger btn-sm" onclick="f9()" id="apply9">alert(arr2)</button>
         </div>
       </div>
     </div>
