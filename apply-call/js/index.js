@@ -1,3 +1,4 @@
+
 var f1 = function(){
   eval($("#apply1").text());
  // alert(callSum1(5,6));
@@ -27,4 +28,59 @@ var f8 = function(){
 var f9 = function(){
   eval($("#apply7").text());
   eval($("#apply9").text());
+};
+var f11 = function(){
+    eval($("#apply10").text());
+    //alert(add.call(sub,3,1));
+};
+
+var cf1 = function(){
+    eval($("#c1").text());
+    eval($("#cb1").text());
+};
+var cf2 = function(){
+    eval($("#c2").text());
+    eval($("#cb2").text());
+};
+var cf3 = function(){
+    eval($("#c2").text());
+    eval($("#cb3").text());
+};
+var cf4 = function(){
+    eval($("#c2").text());
+    eval($("#cb4").text());
+};
+var cf5 = function(){
+    eval($("#c2").text());
+    eval($("#cb5").text());
+};
+var cf6 = function(){
+    eval($("#c3").text());
+};
+var bf1 = function(){
+    eval($("#b1").text());
+    eval($("#bb1").text());
+};
+var bf2 = function(){
+    eval($("#b1").text());
+    eval($("#bb2").text());
+};
+var bf3 = function(){
+    eval($("#b1").text());
+    eval($("#bb3").text());
+};
+var bf4 = function(){
+    eval($("#b2").text());
+    eval($("#bb4").text());
+};
+var bf5 = function(){
+    eval($("#b2").text());
+    eval($("#bb5").text());
+};
+var bf6 = function(){
+    eval($("#b2").text());
+    eval($("#bb6").text());
+};
+var bf7 = function(){
+    eval($("#b3").text());
 };

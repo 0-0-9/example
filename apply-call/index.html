@@ -8,10 +8,6 @@
 -->
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/style.css">
-
-
-
-
   </head>
 
   <body>
@@ -43,9 +39,9 @@ function callSum2(num1,num2){
 
         <div class="panel-body">
           <pre id="apply4">
-          var arr = [1,2,3,4,5];
-          var max = Math.max.apply(Math,arr);
-          var min = Math.min.apply(max,arr);</pre>
+var arr = [1,2,3,4,5];
+var max = Math.max.apply(Math,arr);
+var min = Math.min.apply([],arr);</pre>
         </div>
         <div class="panel-footer text-right">
           <button type="button" class="btn btn-danger btn-sm" onclick="f5()" id="apply5">alert(max)</button>
@@ -62,6 +58,15 @@ Array.prototype.push.apply(arr1,arr2);</pre>
           <button type="button" class="btn btn-danger btn-sm" onclick="f8()" id="apply8">alert(arr1)</button>
           <button type="button" class="btn btn-danger btn-sm" onclick="f9()" id="apply9">alert(arr2)</button>
         </div>
+
+        <div class="panel-body">
+          <pre id="apply10">
+11</pre>
+        </div>
+        <div class="panel-footer text-right">
+          <button type="button" class="btn btn-danger btn-sm" onclick="f11()" id="apply11">11alert(arr1)</button>
+          <button type="button" class="btn btn-danger btn-sm" onclick="f12()" id="apply12">alert(arr2)</button>
+        </div>
       </div>
     </div>
   </div>
@@ -70,20 +75,130 @@ Array.prototype.push.apply(arr1,arr2);</pre>
     <div class="col-md-8 col-xs-8 col-md-offset-2 col-xs-offset-2">
       <div class="panel panel-warning">
         <div class="panel-heading">
-          title
+          call
         </div>
         <div class="panel-body">
-          <pre>
-//
+          <pre id="c1">
+function sum(num1,num2){
+  return num1 + num2;
+}
+function callSum(num1,num2){
+  return sum.call(this,num1,num2);
+}
 </pre>
         </div>
         <div class="panel-footer text-right">
-          <button type="button" class="btn btn-danger btn-sm" onclick="f1()">btn</button>
+          <button type="button" class="btn btn-danger btn-sm" onclick="cf1()" id="cb1">alert(callSum(3,4))</button>
+        </div>
+
+        <div class="panel-body">
+          <pre id="c2">
+window.girl = "Selina";
+var o = {girl: "Hebe"};
+
+function showGirl(){
+    alert(this.girl);
+}
+</pre>
+        </div>
+        <div class="panel-footer text-right">
+          <button type="button" class="btn btn-danger btn-sm" onclick="cf2()" id="cb2">showGirl()</button>
+          <button type="button" class="btn btn-danger btn-sm" onclick="cf3()" id="cb3">showGirl.call(this)</button>
+          <button type="button" class="btn btn-danger btn-sm" onclick="cf4()" id="cb4">showGirl.call(window)</button>
+          <button type="button" class="btn btn-warning btn-sm" onclick="cf5()" id="cb5">showGirl.call(o)</button>
+        </div>
+
+        <div class="panel-body">
+          <pre id="c3">
+var girl = {
+    name: "Selina",
+    sayHello: function(obj){
+        alert(this.name + " says Hello " + obj)
+    }
+};
+girl.sayHello.call(girl,"Everybody");
+</pre>
+        </div>
+        <div class="panel-footer text-right">
+          <button type="button" class="btn btn-info btn-sm" onclick="cf6()" id="cb6">GO!</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-8 col-xs-8 col-md-offset-2 col-xs-offset-2">
+      <div class="panel panel-warning">
+        <div class="panel-heading">
+          bind
+        </div>
+        <div class="panel-body">
+          <pre id="b1">
+this.girl = "Selina";
+var star = {
+  girl: "Hebe",
+  myGirl: function(){
+    return this.girl;
+  }
+};
+var thisGirl = star.myGirl;
+var boundThisGirl = thisGirl.bind(star);
+</pre>
+        </div>
+        <div class="panel-footer text-right">
+          <button type="button" class="btn btn-danger btn-sm" onclick="bf1()" id="bb1">alert(star.myGirl());
+          </button>
+          <button type="button" class="btn btn-danger btn-sm" onclick="bf2()" id="bb2">alert(thisGirl());
+          </button>
+          <button type="button" class="btn btn-danger btn-sm" onclick="bf3()" id="bb3">alert(boundThisGirl());
+          </button>
+        </div>
+
+        <div class="panel-body">
+          <pre id="b2">
+function list(){
+  return Array.prototype.slice.call(arguments);
+}
+var list1 = list(1,2,3);
+var presetList = list.bind(null,"Selina");
+var list2 = presetList();
+var list3 = presetList(4,5,6);
+</pre>
+        </div>
+        <div class="panel-footer text-right">
+          <button type="button" class="btn btn-danger btn-sm" onclick="bf4()" id="bb4">alert(list1);
+          </button>
+          <button type="button" class="btn btn-danger btn-sm" onclick="bf5()" id="bb5">alert(list2);
+          </button>
+          <button type="button" class="btn btn-danger btn-sm" onclick="bf6()" id="bb6">alert(list3);
+          </button>
+        </div>
+
+        <div class="panel-body">
+          <pre id="b3">
+var girl = {
+    name: "Selina",
+    sayHello: function(obj){
+        alert(this.name + " says Hello " + obj)
+    }
+};
+//girl.sayHello.call(girl,"Everybody");
+var boundHello = girl.sayHello.bind(girl);
+boundHello("Everybody");
+</pre>
+        </div>
+        <div class="panel-footer text-right">
+          <button type="button" class="btn btn-info btn-sm" onclick="bf7()" id="bb7">GO!
+          </button>
         </div>
       </div>
     </div>
   </div>
-<div>
+
+
+    </div>
+
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
 
         <script src="js/index.js"></script>
