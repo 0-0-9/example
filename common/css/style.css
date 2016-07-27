@@ -3,7 +3,8 @@ body {
 }
 
 .container {
-  margin-top: 10%;
+  margin-top: 8vh;
+  margin-bottom: 8vh;
 }
 
 button {
