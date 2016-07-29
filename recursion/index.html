@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript中的递归</title>
+    <link rel="stylesheet" type="text/css" href="../common/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../common/css/style.css">
+</head>
+<body>
+<div class="container">
+      <div class="row">
+        <div class="col-md-8 col-xs-8 col-md-offset-2 col-xs-offset-2">
+          <div class="panel panel-warning">
+            <div class="panel-heading">
+              递归
+            </div>
+            <div class="panel-body">
+              <pre id="ap1">
+function factorial(num){
+    if(num &lt;= 1){
+        return 1;
+    }else{
+        return num * factorial(num -1);
+    }
+}
+</pre>
+            </div>
+            <div class="panel-footer text-right">
+              <button type="button" class="btn btn-danger btn-sm" onclick="af1()" id="ab1">alert(factorial(3))</button>
+              <button type="button" class="btn btn-danger btn-sm" onclick="af2()" id="ab2">alert(factorial(2))</button>
+            </div>
+            <div class="panel-body">
+              <pre id="ap2">
+function factorial(num){
+    if(num &lt;= 1){
+        return 1;
+    }else{
+        return num * arguments.callee(num -1);
+    }
+}
+</pre>
+            </div>
+            <div class="panel-footer text-right">
+              <button type="button" class="btn btn-danger btn-sm" onclick="af3()" id="ab3">alert(factorial(3))</button>
+              <button type="button" class="btn btn-danger btn-sm" onclick="af4()" id="ab4">alert(factorial(2))</button>
+            </div>
+            <div class="panel-body">
+
+    <pre id="ap3">
+var factorial = (function fn(num){
+    if(num &lt;= 1){
+        return 1;
+    }else{
+        return num * fn(num -1);
+    }
+});
+</pre>
+            </div>
+            <div class="panel-footer text-right">
+              <button type="button" class="btn btn-danger btn-sm" onclick="af5()" id="ab5">alert(factorial(3))</button>
+              <button type="button" class="btn btn-danger btn-sm" onclick="af6()" id="ab6">alert(factorial(2))</button>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+<script type="text/javascript" src="../common/js/jquery/2.2.4/jQuery_v2.2.4.js"></script>
+<script type="text/javascript" src="js/recursion.js"></script>
+</body>
+</html>
