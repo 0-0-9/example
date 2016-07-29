@@ -1,3 +1,15 @@
+@font-face{
+    font-family: 'Source Code Pro';
+    font-weight: 200;
+    font-style: normal;
+    font-stretch: normal;
+    src: url('fonts/source-code-pro/EOT/SourceCodePro-ExtraLight.eot') format('embedded-opentype'),
+         url('fonts/source-code-pro/WOFF2/TTF/SourceCodePro-ExtraLight.ttf.woff2') format('woff2'),
+         url('fonts/source-code-pro/WOFF/OTF/SourceCodePro-ExtraLight.otf.woff') format('woff'),
+         url('fonts/source-code-pro/OTF/SourceCodePro-ExtraLight.otf') format('opentype'),
+         url('fonts/source-code-pro/TTF/SourceCodePro-ExtraLight.ttf') format('truetype');
+}
+
 body {
   background-color: lightblue;
 }
@@ -9,9 +21,13 @@ body {
 
 button {
   min-width: 8vh;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.1em;
 }
 
 .height_1{
     height: 1vh;
+}
+
+pre,button{
+    font-family:'Source Code Pro';
 }
