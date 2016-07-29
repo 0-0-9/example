@@ -11,3 +11,7 @@ button {
   min-width: 8vh;
   letter-spacing: 0.2em;
 }
+
+.height_1{
+    height: 1vh;
+}

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>继承与原型链</title>
+    <link rel="stylesheet" type="text/css" href="../common/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../common/css/style.css">
+</head>
+<body>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-xs-8 col-md-offset-2 col-xs-offset-2">
+      <div class="panel panel-warning">
+        <div class="panel-heading">
+          基于原型链的继承
+        </div>
+        <div class="panel-body">
+          <pre id="ap1">
+function SuperFn(){
+    this.desc1 = "superProp";
+}
+SuperFn.prototype.getSuperDesc = function(){
+    return this.desc1;
+};
+function SubFn(){
+    this.desc2 = "subProp";
+}
+//SubFn继承了SuperFn ①
+SubFn.prototype = new SuperFn();
+//添加新方法 ②
+SubFn.prototype.getSubDesc = function(){
+    return this.desc2;
+};
+//重写超类中方法 ③
+SubFn.prototype.getSuperDesc = function(){
+    return "Selina";
+};
+
+var child = new SubFn();
+var parent = new SuperFn();
+</pre>
+        </div>
+        <div class="panel-footer text-right">
+          <button type="button" class="btn btn-danger btn-sm" onclick="af1()" id="ab1">alert(child.getSuperDesc())</button>
+          <button type="button" class="btn btn-danger btn-sm" onclick="af2()" id="ab2">alert(parent.getSuperDesc())</button>
+        </div>
+
+        <div class="panel-body">
+                  <pre id="ap2">
+function SuperFn(){
+    this.desc1 = "superProp";
+}
+SuperFn.prototype.getSuperDesc = function(){
+    return this.desc1;
+};
+function SubFn(){
+    this.desc2 = "subProp";
+}
+
+//添加新方法 ②
+SubFn.prototype.getSubDesc = function(){
+    return this.desc2;
+};
+//重写超类中方法 ③
+SubFn.prototype.getSuperDesc = function(){
+    return "Selina";
+};
+//SubFn继承了SuperFn ①
+SubFn.prototype = new SuperFn();
+
+var child = new SubFn();
+var parent = new SuperFn();
+</pre>
+        </div>
+        <div class="panel-footer text-right">
+          <button type="button" class="btn btn-danger btn-sm" onclick="af3()" id="ab3">alert(child.getSuperDesc())</button>
+          <button type="button" class="btn btn-danger btn-sm" onclick="af4()" id="ab4">alert(parent.getSuperDesc())</button>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="row">
+      <div class="col-md-8 col-xs-8 col-md-offset-2 col-xs-offset-2">
+        <div class="panel panel-warning">
+          <div class="panel-heading">
+            借用构造函数
+          </div>
+          <div class="panel-body">
+            <pre id="bp1">
+function SuperFn(){
+    this.girls = ["Selina","Hebe","Ella"];
+}
+function SubFn(){
+    //继承了SuperFn
+    SuperFn.call(this);
+}
+
+var child1 = new SubFn();
+child1.girls.push("Jay");
+var child2 = new SubFn();
+</pre>
+          </div>
+          <div class="panel-footer text-right">
+            <button type="button" class="btn btn-danger btn-sm" onclick="bf1()" id="bb1">alert(child1.girls);</button>
+            <button type="button" class="btn btn-danger btn-sm" onclick="bf2()" id="bb2">alert(child2.girls);</button>
+          </div>
+          <div class="panel-body">
+          <pre id="bp2">
+function SuperFn(name){
+    this.name = name;
+}
+function SubFn(){
+    SuperFn.call(this,"Selina");
+    this.age = 18;
+}
+var child = new SubFn();</pre>
+          </div>
+          <div class="panel-footer text-right">
+            <button type="button" class="btn btn-danger btn-sm" onclick="bf3()" id="bb3">alert(child.name)</button>
+            <button type="button" class="btn btn-danger btn-sm" onclick="bf4()" id="bb4">alert(child.age)</button>
+          </div>
+        </div>
+      </div>
+    </div>
+      <div class="row">
+        <div class="col-md-8 col-xs-8 col-md-offset-2 col-xs-offset-2">
+          <div class="panel panel-warning">
+            <div class="panel-heading">
+              组合继承
+            </div>
+            <div class="panel-body">
+              <pre id="cp1">
+function SuperFn(name){
+    this.name = name;
+    this.cds = ["super star","shero"];
+}
+SuperFn.prototype.sayName = function(){
+    alert(this.name);
+};
+function SubFn(name,age){
+    SuperFn.call(this,name);
+    this.age = age;
+}
+
+SubFn.prototype = new SuperFn();
+SubFn.prototype.sayAge = function(){
+    alert(this.age);
+};
+
+SubFn.prototype.constructor = SubFn;
+var child1 = new SubFn("Selina",18);
+child1.cds.push("forever");
+var child2 = new SubFn("Hebe",17);
+</pre>
+            </div>
+            <div class="panel-footer text-right">
+              <button type="button" class="btn btn-danger btn-sm" onclick="cf1()" id="cb1">alert(child1.name);</button>
+              <button type="button" class="btn btn-danger btn-sm" onclick="cf3()" id="cb3">alert(child1.cds);</button>
+              <button type="button" class="btn btn-danger btn-sm" onclick="cf5()" id="cb5">child1.sayName();</button>
+              <button type="button" class="btn btn-danger btn-sm" onclick="cf7()" id="cb7">child1.sayAge();</button>
+              <div class="height_1"></div>
+              <button type="button" class="btn btn-warning btn-sm" onclick="cf2()" id="cb2">alert(child2.name);</button>
+              <button type="button" class="btn btn-warning btn-sm" onclick="cf4()" id="cb4">alert(child2.cds);</button>
+              <button type="button" class="btn btn-warning btn-sm" onclick="cf6()" id="cb6">child2.sayName();</button>
+              <button type="button" class="btn btn-warning btn-sm" onclick="cf8()" id="cb8">child2.sayAge();</button>
+
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+
+<script src='../common/js/jquery/2.2.4/jQuery_v2.2.4.js'></script>
+<script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>
