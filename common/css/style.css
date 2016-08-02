@@ -1,13 +1,13 @@
 @font-face{
     font-family: 'Source Code Pro';
-    font-weight: 200;
+    font-weight: 400;
     font-style: normal;
     font-stretch: normal;
-    src: url('fonts/source-code-pro/EOT/SourceCodePro-ExtraLight.eot') format('embedded-opentype'),
-         url('fonts/source-code-pro/WOFF2/TTF/SourceCodePro-ExtraLight.ttf.woff2') format('woff2'),
-         url('fonts/source-code-pro/WOFF/OTF/SourceCodePro-ExtraLight.otf.woff') format('woff'),
-         url('fonts/source-code-pro/OTF/SourceCodePro-ExtraLight.otf') format('opentype'),
-         url('fonts/source-code-pro/TTF/SourceCodePro-ExtraLight.ttf') format('truetype');
+    src: url('../fonts/source-code-pro/EOT/SourceCodePro-Regular.eot') format('embedded-opentype'),
+         url('../fonts/source-code-pro/WOFF2/TTF/SourceCodePro-Regular.ttf.woff2') format('woff2'),
+         url('../fonts/source-code-pro/WOFF/OTF/SourceCodePro-Regular.otf.woff') format('woff'),
+         url('../fonts/source-code-pro/OTF/SourceCodePro-Regular.otf') format('opentype'),
+         url('../fonts/source-code-pro/TTF/SourceCodePro-Regular.ttf') format('truetype');
 }
 
 body {
