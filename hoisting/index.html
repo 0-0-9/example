@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript中的变量提升</title>
+    <link rel="stylesheet" type="text/css" href="../common/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../common/css/style.css">
+</head>
+<body>
+<div class="container">
+      <div class="row">
+        <div class="col-md-8 col-xs-8 col-md-offset-2 col-xs-offset-2">
+          <div class="panel panel-warning">
+            <div class="panel-heading">
+              执行环境
+            </div>
+            <div class="panel-body">
+              <pre id="ap1">
+var girl = "Selina";
+function showGirl(){
+    var girl2 = "Hebe";
+    function swapGirl(){
+        var temp = girl;
+        girl = girl2;
+        girl2 = temp;
+        //可访问 temp,girl,girl2
+    }
+    //可访问 girl,girl2
+    swapGirl();
+}
+//只能访问 girl
+showGirl();
+</pre>
+            </div>
+            <div class="panel-footer text-right">
+              <button type="button" class="btn btn-danger btn-sm" onclick="af1()" id="ab1">alert(girl)</button>
+              <button type="button" class="btn btn-danger btn-sm" onclick="af2()" id="ab2">alert(girl2)</button>
+            </div>
+            <div class="panel-body">
+                      <pre id="ap2">
+if(true){
+    var a = "Selina";
+}else{
+    var b = "Hebe";
+}
+</pre>
+            </div>
+            <div class="panel-footer text-right">
+              <button type="button" class="btn btn-danger btn-sm" onclick="af3()" id="ab3">alert(a)</button>
+              <button type="button" class="btn btn-danger btn-sm" onclick="af4()" id="ab4">alert(b)</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8 col-xs-8 col-md-offset-2 col-xs-offset-2">
+          <div class="panel panel-warning">
+            <div class="panel-heading">
+              函数级作用域
+            </div>
+            <div class="panel-body">
+              <pre id="bp1">
+if(true){
+    var girl = "Selina";
+}
+</pre>
+            </div>
+            <div class="panel-footer text-right">
+              <button type="button" class="btn btn-danger btn-sm" onclick="bf1()" id="bb1">alert(girl);</button>
+            </div>
+            <div class="panel-body">
+                      <pre id="bp2">
+for(var i = 1; i < 10; i++){
+    //do something...
+}
+</pre>
+            </div>
+            <div class="panel-footer text-right">
+              <button type="button" class="btn btn-danger btn-sm" onclick="bf2()" id="bb2">alert(i)</button>
+            </div>
+          </div>
+        </div>
+      </div>
+        <div class="row">
+          <div class="col-md-8 col-xs-8 col-md-offset-2 col-xs-offset-2">
+            <div class="panel panel-warning">
+              <div class="panel-heading">
+                变量提升
+              </div>
+              <div class="panel-body">
+                <pre id="cp1">
+//name = "Selina";
+var name;
+alert(name);
+</pre>
+              </div>
+              <div class="panel-footer text-right">
+                <button type="button" class="btn btn-info btn-sm" onclick="cf1()" id="cb1">GO!</button>
+              </div>
+              <div class="panel-body">
+                        <pre id="cp2">
+function foo(a,b){
+    alert("a:" + a);
+    alert("b:" + b);
+    alert("c:" + c);
+    alert("d:" + d);
+    alert("e:" + e);
+    alert("f:" + f);
+    var c = "this is c";
+    function d(){}
+    var e = function(){};
+    (function f(){});
+}
+</pre>
+              </div>
+              <div class="panel-footer text-right">
+                <button type="button" class="btn btn-danger btn-sm" onclick="cf2()" id="cb2">foo("Selina")</button>
+              </div>
+            </div>
+          </div>
+        </div>
+          <div class="row">
+            <div class="col-md-8 col-xs-8 col-md-offset-2 col-xs-offset-2">
+              <div class="panel panel-warning">
+                <div class="panel-heading">
+                  函数声明提升
+                </div>
+                <div class="panel-body">
+                  <pre id="dp1">
+showGirl();
+function showGirl(){
+    alert("看！有美女！");
+}
+</pre>
+                </div>
+                <div class="panel-footer text-right">
+                  <button type="button" class="btn btn-info btn-sm" onclick="df1()" id="db1">GO!</button>
+                </div>
+                <div class="panel-body">
+                          <pre id="dp2">
+//alert(foo);
+var foo ;
+function foo(){}
+alert(foo);
+</pre>
+                </div>
+                <div class="panel-footer text-right">
+                  <button type="button" class="btn btn-info btn-sm" onclick="df2()" id="db2">GO!</button>
+                </div>
+              </div>
+            </div>
+          </div>
+</div>
+<script type="text/javascript" src="../common/js/jquery/2.2.4/jQuery_v2.2.4.js"></script>
+<script type="text/javascript" src="js/hoisting.js"></script>
+</body>
+</html>

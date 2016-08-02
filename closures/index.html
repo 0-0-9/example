@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript中的闭包</title>
+    <link rel="stylesheet" type="text/css" href="../common/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../common/css/style.css">
+</head>
+<body>
+<div class="container">
+      <div class="row">
+        <div class="col-md-8 col-xs-8 col-md-offset-2 col-xs-offset-2">
+          <div class="panel panel-warning">
+            <div class="panel-heading">
+              title
+            </div>
+            <div class="panel-body">
+              <pre id="ap1">
+window.name = "this is window";
+var obj = {
+    name:"this is obj",
+    getName:function(){
+        return function(){
+            return this.name;
+        }
+    }
+};
+alert(obj.getName()());
+</pre>
+            </div>
+            <div class="panel-footer text-right">
+              <button type="button" class="btn btn-danger btn-sm" onclick="af1()" id="ab1">;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+<script type="text/javascript" src="../common/js/jquery/2.2.4/jQuery_v2.2.4.js"></script>
+<script type="text/javascript" src="js/closures.js"></script>
+</body>
+</html>
