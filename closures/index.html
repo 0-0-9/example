@@ -12,14 +12,112 @@
         <div class="col-md-8 col-xs-8 col-md-offset-2 col-xs-offset-2">
           <div class="panel panel-warning">
             <div class="panel-heading">
-              title
+              自由变量
             </div>
             <div class="panel-body">
               <pre id="ap1">
-window.name = "this is window";
+var x = "Selina,out of bar()";
+function foo(){
+    alert(x);
+}
+function bar(fn){
+     var x = "Hebe,inside bar()";
+    (function(){
+        x = "Ella";
+        fn();
+    })();
+}
+bar(foo());
+</pre>
+            </div>
+            <div class="panel-footer text-right">
+              <button type="button" class="btn btn-info btn-sm" onclick="af1()" id="ab1">GO!</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+        <div class="row">
+          <div class="col-md-8 col-xs-8 col-md-offset-2 col-xs-offset-2">
+            <div class="panel panel-warning">
+              <div class="panel-heading">
+                JavaScript中的闭包
+              </div>
+              <div class="panel-body">
+                <pre id="bp1">
+var firstClosure,secondClosure;
+function foo(){
+    var x = 10;
+    firstClosure = function (){
+        return "firstClosure: " +(++x);
+    }
+    secondClosure = function (){
+        return "secondClosure: " +(--x);
+    }
+    x = 20;
+    alert(firstClosure());
+}
+foo();
+alert(firstClosure());
+alert(secondClosure());
+</pre>
+              </div>
+              <div class="panel-footer text-right">
+                <button type="button" class="btn btn-info btn-sm" onclick="bf1()" id="bb1">GO!</button>
+              </div>
+              <div class="panel-body">
+                        <pre id="bp2">
+function foo(k,max){
+    var result = new Array();
+    for (var i = 0; i < max; i++){
+        result[i] = function(){
+            alert(i);
+        };
+    }
+    return result[k]();
+}
+</pre>
+              </div>
+              <div class="panel-footer text-right">
+                <button type="button" class="btn btn-danger btn-sm" onclick="bf2()" id="bb2">foo(1,5);</button>
+                <button type="button" class="btn btn-danger btn-sm" onclick="bf3()" id="bb3">foo(2,5);</button>
+                <button type="button" class="btn btn-danger btn-sm" onclick="bf4()" id="bb4">foo(3,5);</button>
+              </div>
+              <div class="panel-body">
+                        <pre id="bp3">
+function foo(k,max){
+    var result = new Array();
+    for (var i = 0; i < max; i++){
+        result[i] = function(num){
+            return function(){
+                alert(num);
+            };
+        }(i);
+    }
+    return result[k]();
+}
+</pre>
+              </div>
+              <div class="panel-footer text-right">
+                <button type="button" class="btn btn-danger btn-sm" onclick="bf5()" id="bb5">foo(1,5);</button>
+                <button type="button" class="btn btn-danger btn-sm" onclick="bf6()" id="bb6">foo(2,5);</button>
+                <button type="button" class="btn btn-danger btn-sm" onclick="bf7()" id="bb7">foo(3,5);</button>
+              </div>
+            </div>
+          </div>
+        </div>
+          <div class="row">
+            <div class="col-md-8 col-xs-8 col-md-offset-2 col-xs-offset-2">
+              <div class="panel panel-warning">
+                <div class="panel-heading">
+                  关于this对象
+                </div>
+                <div class="panel-body">
+                  <pre id="cp1">
+name = "this is window";
 var obj = {
-    name:"this is obj",
-    getName:function(){
+    name: "this is obj",
+    getName: function(){
         return function(){
             return this.name;
         }
@@ -27,13 +125,31 @@ var obj = {
 };
 alert(obj.getName()());
 </pre>
-            </div>
-            <div class="panel-footer text-right">
-              <button type="button" class="btn btn-danger btn-sm" onclick="af1()" id="ab1">;</button>
+                </div>
+                <div class="panel-footer text-right">
+                  <button type="button" class="btn btn-info btn-sm" onclick="cf1()" id="cb1">GO!</button>
+                </div>
+                <div class="panel-body">
+                          <pre id="cp2">
+name = "this is window";
+var obj = {
+    name: "this is obj",
+    getName: function(){
+        var _this = this;
+        return function(){
+            return _this.name;
+        }
+    }
+};
+alert(obj.getName()());
+</pre>
+                </div>
+                <div class="panel-footer text-right">
+                  <button type="button" class="btn btn-info btn-sm" onclick="cf2()" id="cb2">GO!</button>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
 </div>
 <script type="text/javascript" src="../common/js/jquery/2.2.4/jQuery_v2.2.4.js"></script>
 <script type="text/javascript" src="js/closures.js"></script>
