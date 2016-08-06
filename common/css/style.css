@@ -31,3 +31,6 @@ button {
 pre,button{
     font-family:'Source Code Pro';
 }
+table td,th{
+  text-align: center;
+}
