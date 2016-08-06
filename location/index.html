@@ -30,6 +30,48 @@
                         <td></td>
                         <td><button type="button" class="btn btn-danger" onclick="tf1()" id="tb1">alert(location.hash)</button></td>
                     </tr>
+                    <tr>
+                        <td>host</td>
+                        <td>"www.wrox.com:80"</td>
+                        <td></td>
+                        <td><button type="button" class="btn btn-danger" onclick="tf2()" id="tb2">alert(location.host)</button></td>
+                    </tr>
+                    <tr>
+                        <td>hostname</td>
+                        <td>"www.wrox.com"</td>
+                        <td>返回不带端口号的服务器</td>
+                        <td><button type="button" class="btn btn-danger" onclick="tf3()" id="tb3">alert(location.hash)</button></td>
+                    </tr>
+                    <tr>
+                        <td>href</td>
+                        <td>"http://www.wrox.com"</td>
+                        <td>返回当前加载页面的完整URL。结果同location.toString()</td>
+                        <td><button type="button" class="btn btn-danger" onclick="tf4()" id="tb4">alert(location.href)</button></td>
+                    </tr>
+                    <tr>
+                        <td>pathname</td>
+                        <td>"/WileyCDA"</td>
+                        <td>返回URL中目录和（或）文件名</td>
+                        <td><button type="button" class="btn btn-danger" onclick="tf5()" id="tb5">alert(location.pathname)</button></td>
+                    </tr>
+                    <tr>
+                        <td>port</td>
+                        <td>"8080"</td>
+                        <td>返回端口号。若无端口号，返回空字符串</td>
+                        <td><button type="button" class="btn btn-danger" onclick="tf6()" id="tb6">alert(location.port)</button></td>
+                    </tr>
+                    <tr>
+                        <td>portocol</td>
+                        <td>"http:"</td>
+                        <td>返回页面使用的协议</td>
+                        <td><button type="button" class="btn btn-danger" onclick="tf7()" id="tb7">alert(location.portocol)</button></td>
+                    </tr>
+                    <tr>
+                        <td>search</td>
+                        <td>"?q=js"</td>
+                        <td>返回URL的查询字符串。以问号开头</td>
+                        <td><button type="button" class="btn btn-danger" onclick="tf8()" id="tb8">alert(location.search)</button></td>
+                    </tr>
                 </tbody>
             </table>
             <div class="panel-body">
