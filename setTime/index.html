@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript中的定时器</title>
+    <link rel="stylesheet" type="text/css" href="../common/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../common/css/style.css">
+</head>
+<body>
+<div class="container">
+      <div class="row">
+        <div class="col-md-8 col-xs-8 col-md-offset-2 col-xs-offset-2">
+          <div class="panel panel-warning">
+            <div class="panel-heading">
+              超时调用 setTimeout()
+            </div>
+            <div class="panel-body">
+              <pre id="ap1">
+setTimeout("alert('Hey,girls!')",1000);
+</pre>
+            </div>
+            <div class="panel-footer text-right">
+            <i style="float: left; display: none">调用函数经过了<span class="aclock1">0</span>秒</i>
+              <button type="button" class="btn btn-info btn-sm" onclick="af1()" id="ab1">GO!</button>
+            </div>
+            <div class="panel-body">
+              <pre id="ap2">
+setTimeout(function(){
+    alert('Hey,girls!');
+},1000);
+</pre>
+            </div>
+            <div class="panel-footer text-right">
+            <i style="float: left; display: none">调用函数经过了<span class="aclock2">0</span>秒</i>
+              <button type="button" class="btn btn-info btn-sm" onclick="af2()" id="ab2">GO!</button>
+            </div>
+            <div class="panel-body">
+                      <pre id="ap3">
+function showGirl(){
+    alert("Selina ❤️ ");
+}
+var timeoutId = setTimeout(showGirl,1000);
+clearTimeout(timeoutId);
+</pre>
+            </div>
+            <div class="panel-footer text-right">
+              <button type="button" class="btn btn-info btn-sm" onclick="af3()" id="ab3">GO!</button>
+            </div>
+            <div class="panel-body">
+                      <pre id="ap4">
+window.girl = "Selina";
+var obj = {
+    girl: "Hebe",
+    showGirl: function(){
+        setTimeout(function(){
+            alert(this.girl);
+        },500);
+    }
+}
+obj.showGirl();
+</pre>
+            </div>
+            <div class="panel-footer text-right">
+              <button type="button" class="btn btn-info btn-sm" onclick="af4()" id="ab4">GO!</button>
+            </div>
+            <div class="panel-body">
+                      <pre id="ap5">
+window.girl = "Selina";
+var obj = {
+    girl: "Hebe",
+    showGirl: function(){
+        setTimeout(function(){
+            alert(this.girl);
+        }.bind(this),500);
+    }
+}
+obj.showGirl();
+</pre>
+            </div>
+            <div class="panel-footer text-right">
+              <button type="button" class="btn btn-info btn-sm" onclick="af5()" id="ab5">GO!</button>
+            </div>
+          </div>
+        </div>
+      </div>
+        <div class="row">
+          <div class="col-md-8 col-xs-8 col-md-offset-2 col-xs-offset-2">
+            <div class="panel panel-warning">
+              <div class="panel-heading">
+                间歇调用 setInterval()
+              </div>
+              <div class="panel-body">
+                <pre id="bp1">
+setInterval("alert('Hey,girls!')",1000);
+</pre>
+              </div>
+              <div class="panel-footer text-right">
+                <button type="button" class="btn btn-info btn-sm" onclick="bf1()" id="bb1">GO!</button>
+                <button type="button" class="btn btn-success btn-sm" onclick="bf2()" id="bb2">STOP</button>
+              </div>
+              <div class="panel-body">
+                <pre id="bp2">
+setInterval(function(){
+    alert('Hey,girls!');
+},1000);
+</pre>
+              </div>
+              <div class="panel-footer text-right">
+                <button type="button" class="btn btn-info btn-sm" onclick="bf3()" id="bb3">GO!</button>
+                <button type="button" class="btn btn-success btn-sm" onclick="bf4()" id="bb4">STOP</button>
+              </div>
+              <div class="panel-body">
+                        <pre id="bp3">
+var num = 0;
+var max = 3;
+var intervalId = null;
+
+function incrementNumber(){
+    num++;
+    //当执行次数达到max，取消后续调用
+    if(num === max){
+        clearInterval(intervalId);
+        alert("num: "+ num + ",Done!");
+    }
+}
+intervalId = setInterval(incrementNumber,500);
+</pre>
+              </div>
+              <div class="panel-footer text-right">
+                <button type="button" class="btn btn-info btn-sm" onclick="bf5()" id="bb5">GO!</button>
+              </div>
+              <div class="panel-body">
+                        <pre id="bp4">
+var num = 0;
+var max = 3;
+
+function incrementNumber(){
+    num++;
+    //当执行次数没有达到max，设置另一次超时调用
+    if(num < max){
+        setTimeout(incrementNumber,500);
+    }else{
+        alert("num: "+ num + ",Done!");
+    }
+}
+setTimeout(incrementNumber,500);
+</pre>
+              </div>
+              <div class="panel-footer text-right">
+                <button type="button" class="btn btn-info btn-sm" onclick="bf6()" id="bb6">GO!</button>
+              </div>
+            </div>
+          </div>
+        </div>
+</div>
+<script type="text/javascript" src="../common/js/jquery/2.2.4/jQuery_v2.2.4.js"></script>
+<script type="text/javascript" src="js/setTime.js"></script>
+</body>
+</html>
