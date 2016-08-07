@@ -6,6 +6,18 @@ var af2 = function(){
   eval($("#ap1").text());
   eval($("#ab2").text());
 };
+var af3 = function(){
+  eval($("#ap1").text());
+  eval($("#ab3").text());
+};
+var af4 = function(){
+  eval($("#ap2").text());
+  eval($("#ab4").text());
+};
+var af5 = function(){
+  eval($("#ap3").text());
+  eval($("#ab5").text());
+};
 var eg = "https://github.com/HoneyNeutrons/RecyclerViewUndoSwipe/search?utf8=%E2%9C%93&q=read";
 var tf1 = function(){
   eval($("#tb1").text());
