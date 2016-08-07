@@ -1,7 +1,12 @@
 var af1 = function(){
   eval($("#ap1").text());
-  // eval($("#xb1").text());
+  eval($("#ab1").text());
 };
+var af2 = function(){
+  eval($("#ap1").text());
+  eval($("#ab2").text());
+};
+var eg = "https://github.com/HoneyNeutrons/RecyclerViewUndoSwipe/search?utf8=%E2%9C%93&q=read";
 var tf1 = function(){
   eval($("#tb1").text());
 };

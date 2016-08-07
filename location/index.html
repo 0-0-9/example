@@ -27,65 +27,69 @@
                     <tr>
                         <td>hash</td>
                         <td>"#contents"</td>
-                        <td></td>
+                        <td>设置或返回从井号 (#) 开始的 URL（锚）</td>
                         <td><button type="button" class="btn btn-danger" onclick="tf1()" id="tb1">alert(location.hash)</button></td>
                     </tr>
                     <tr>
                         <td>host</td>
                         <td>"www.wrox.com:80"</td>
-                        <td></td>
+                        <td>设置或返回主机名和当前 URL 的端口号</td>
                         <td><button type="button" class="btn btn-danger" onclick="tf2()" id="tb2">alert(location.host)</button></td>
                     </tr>
                     <tr>
                         <td>hostname</td>
                         <td>"www.wrox.com"</td>
-                        <td>返回不带端口号的服务器</td>
+                        <td>设置或返回不带端口号的服务器</td>
                         <td><button type="button" class="btn btn-danger" onclick="tf3()" id="tb3">alert(location.hash)</button></td>
                     </tr>
                     <tr>
                         <td>href</td>
                         <td>"http://www.wrox.com"</td>
-                        <td>返回当前加载页面的完整URL。结果同location.toString()</td>
+                        <td>设置或返回当前加载页面的完整URL。结果同location.toString()</td>
                         <td><button type="button" class="btn btn-danger" onclick="tf4()" id="tb4">alert(location.href)</button></td>
                     </tr>
                     <tr>
                         <td>pathname</td>
                         <td>"/WileyCDA"</td>
-                        <td>返回URL中目录和（或）文件名</td>
+                        <td>设置或返回URL中目录和（或）文件名</td>
                         <td><button type="button" class="btn btn-danger" onclick="tf5()" id="tb5">alert(location.pathname)</button></td>
                     </tr>
                     <tr>
                         <td>port</td>
                         <td>"8080"</td>
-                        <td>返回端口号。若无端口号，返回空字符串</td>
+                        <td>设置或返回端口号。若无端口号，返回空字符串</td>
                         <td><button type="button" class="btn btn-danger" onclick="tf6()" id="tb6">alert(location.port)</button></td>
                     </tr>
                     <tr>
                         <td>protocol</td>
                         <td>"http:"</td>
-                        <td>返回页面使用的协议</td>
+                        <td>设置或返回页面使用的协议</td>
                         <td><button type="button" class="btn btn-danger" onclick="tf7()" id="tb7">alert(location.protocol)</button></td>
                     </tr>
                     <tr>
                         <td>search</td>
                         <td>"?q=js"</td>
-                        <td>返回URL的查询字符串。以问号开头</td>
+                        <td>设置或返回URL的查询字符串。以问号开头</td>
                         <td><button type="button" class="btn btn-danger" onclick="tf8()" id="tb8">alert(location.search)</button></td>
                     </tr>
                 </tbody>
             </table>
             <div class="panel-body">
               <pre id="ap1">
-function b(x, y, a) {
-    arguments[2] = 10;
-    alert(a);
-}
-b(1, 2, 3);
+var h = window.innerHeight;
+var w = window.innerWidth;
+w=window.innerWidth
+|| document.documentElement.clientWidth
+|| document.body.clientWidth;
+h=window.innerHeight
+|| document.documentElement.clientHeight
+|| document.body.clientHeight;
 
 </pre>
             </div>
             <div class="panel-footer text-right">
-              <button type="button" class="btn btn-danger btn-sm" onclick="af1()" id="ab1">btn</button>
+              <button type="button" class="btn btn-danger btn-sm" onclick="af1()" id="ab1">alert(h)</button>
+              <button type="button" class="btn btn-danger btn-sm" onclick="af2()" id="ab2">alert(w)</button>
             </div>
           </div>
         </div>
