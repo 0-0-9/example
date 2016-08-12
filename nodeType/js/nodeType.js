@@ -1,7 +1,5 @@
-
-window.onload = function(){
-
-};
+var div = document.getElementById("docDivId");
+changeToDocDivId();
 var af1 = function(){
   eval($("#ap1").text());
 };
@@ -38,7 +36,7 @@ var bf6 = function(){
     eval($("#bp2").text());
     eval($("#bb6").text());
 };
-var div = document.getElementById("docDivId");
+// var div = document.getElementById("docDivId");
 function changeToDocDivId() {
     if (document.getElementById("docDivId2")) {
         // var div = document.getElementById("docDivId2");
@@ -60,27 +58,27 @@ function changeToDocDivId2() {
     }
 }
 var cf1 = function(){
-    changeToDocDivId();
+    // changeToDocDivId();
   // eval($("#cp2").text());
   eval($("#cb1").text());
 };
 var cf2 = function(){
   // eval($("#cp2").text());
-  changeToDocDivId();
+  // changeToDocDivId();
   eval($("#cb2").text());
 };
 var cf3 = function(){
-    changeToDocDivId();
+    // changeToDocDivId();
   // eval($("#cp2").text());
   eval($("#cb3").text());
 };
 var cf4 = function(){
-    changeToDocDivId();
+    // changeToDocDivId();
   // eval($("#cp2").text());
   eval($("#cb4").text());
 };
 var cf5 = function(){
-    changeToDocDivId();
+    // changeToDocDivId();
   // eval($("#cp2").text());
   eval($("#cb5").text());
 };
