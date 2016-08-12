@@ -1,0 +1,24 @@
+.testL{
+    width: 40%;
+    float: left;
+}
+.testR{
+    width: 60%;
+    float: left;
+}
+.testBox{
+    height: 200px;
+    overflow: auto;
+}
+.testL2{
+    width: 12%;
+    float: left;
+}
+.testR2{
+    width: 88%;
+    float: left;
+}
+.testBox2{
+    height: 120px;
+    overflow: auto;
+}

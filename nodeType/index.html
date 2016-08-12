@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>DOM中的节点类型</title>
+    <link rel="stylesheet" type="text/css" href="../common/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../common/css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/nodeType.css">
+</head>
+<body>
+<div class="container">
+      <div class="row">
+        <div class="col-md-8 col-xs-8 col-md-offset-2 col-xs-offset-2">
+          <div class="panel panel-warning">
+            <div class="panel-heading">
+              Node 类型
+            </div>
+            <div class="panel-body">
+              <pre id="ap1">
+var body = document.body;
+if(body.nodeType === Node.ELEMENT_NODE){
+    alert("Element!");
+}
+</pre>
+            </div>
+            <div class="panel-footer text-right">
+              <button type="button" class="btn btn-info btn-sm" onclick="af1()" id="ab1">GO!</button>
+            </div>
+            <div class="panel-body">
+                      <pre id="ap2">
+var body = document.body;
+if(body.nodeType === 1){
+    alert("Element!");
+}
+</pre>
+            </div>
+            <div class="panel-footer text-right">
+              <button type="button" class="btn btn-info btn-sm" onclick="af2()" id="ab2">GO!</button>
+            </div>
+            <div class="panel-body">
+                      <pre id="ap3">
+var body = document.body;
+var name,val;
+if(body.nodeType === 1){
+    name = body.nodeName;
+    val = body.nodeValue;
+    alert("nodeName:" + name + " nodeValue:" + val);
+}
+</pre>
+            </div>
+            <div class="panel-footer text-right">
+              <button type="button" class="btn btn-info btn-sm" onclick="af3()" id="ab3">GO!</button>
+            </div>
+            <div class="panel-body">
+                      <pre id="ap4">
+var body = document.body;
+alert(body.ownerDocument.nodeName);
+</pre>
+            </div>
+            <div class="panel-footer text-right">
+              <button type="button" class="btn btn-info btn-sm" onclick="af4()" id="ab4">GO!</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+        <div class="row">
+          <div class="col-md-8 col-xs-8 col-md-offset-2 col-xs-offset-2">
+            <div class="panel panel-warning">
+              <div class="panel-heading">
+                操作节点
+              </div>
+              <div class="panel-body">
+              <div class="testBox">
+                <div class="testL">
+                  <ul id="testList">
+                    <li>11111</li>
+                    <li>22222</li>
+                    <li>33333</li>
+                    <li>44444</li>
+                    <li>55555</li>
+                  </ul>
+                </div>
+                <div class="testR">
+                    <pre id="bp1">
+            //←代码效果
+            &lt;ul id="testList"&gt;
+                &lt;li&gt;11111&lt;/li&gt;
+                &lt;li&gt;22222&lt;/li&gt;
+                &lt;li&gt;33333&lt;/li&gt;
+                &lt;li&gt;44444&lt;/li&gt;
+                &lt;li&gt;55555&lt;/li&gt;
+             &lt;/ul&gt;
+</pre>
+                </div>
+              </div>
+      <pre id="bp2">
+var list = document.getElementById("testList");
+
+var p1 = document.createElement("p");
+var text1 = document.createTextNode("text.");
+p1.appendChild(text1);
+var p2 = document.createElement("p");
+var text2 = document.createTextNode("new text.");
+p2.appendChild(text2);
+
+var deepList = list.cloneNode(true);
+var shallowList = list.cloneNode(false);
+</pre>
+              </div>
+              <div class="panel-footer text-right">
+                <button type="button" class="btn btn-danger btn-sm" onclick="bf1()" id="bb1">list.appendChild(p1);</button>
+                <button type="button" class="btn btn-danger btn-sm" onclick="bf2()" id="bb2">list.insertBefore(p1,list.firstChild);</button><div class="height_1"></div>
+                <button type="button" class="btn btn-danger btn-sm" onclick="bf3()" id="bb3">list.removeChild(list.lastChild);</button>
+                <button type="button" class="btn btn-danger btn-sm" onclick="bf4()" id="bb4">list.replaceChild(p2,list.firstChild);</button><div class="height_1"></div>
+                <button type="button" class="btn btn-danger btn-sm" onclick="bf5()" id="bb5">alert(deepList.childNodes.length);</button>
+                <button type="button" class="btn btn-danger btn-sm" onclick="bf6()" id="bb6">alert(shallowList.childNodes.length);</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-8 col-xs-8 col-md-offset-2 col-xs-offset-2">
+            <div class="panel panel-warning">
+              <div class="panel-heading">
+                Document 类型
+              </div>
+              <div class="panel-body">
+              <div class="testBox2">
+                <div class="testL2">
+                  <div id="docDivId" class="docDiv" title="this is title" lang="en" dir="ltr">div content</div>
+                </div>
+                <div class="testR2">
+                  <pre id="cp1">
+//←代码效果
+&lt;div id="docDivId" class="docDiv" title="this is title" lang="en" dir="ltr"&gt;
+  div content
+&lt;/div&gt;
+</pre>
+                </div>
+              </div>
+                <pre id="cp2">
+var div = document.getElementById("docDivId");
+</pre>
+              </div>
+              <div class="panel-footer text-right">
+                <button type="button" class="btn btn-danger btn-sm" onclick="cf1()" id="cb1">alert(div.id)</button>
+                <button type="button" class="btn btn-danger btn-sm" onclick="cf2()" id="cb2">alert(div.className)</button>
+                <button type="button" class="btn btn-danger btn-sm" onclick="cf3()" id="cb3">alert(div.title)</button><div class="height_1"></div>
+                <button type="button" class="btn btn-danger btn-sm" onclick="cf4()" id="cb4">alert(div.lang)</button>
+                <button type="button" class="btn btn-danger btn-sm" onclick="cf5()" id="cb5">alert(div.dir)</button>
+              </div>
+              <div class="panel-body">
+                        <pre id="cp3">
+var div = document.getElementById("docDivId");
+div.id = "docDivId2";
+div.className = "docDiv2";
+div.title = "this is title2";
+div.lang = "fr";
+div.dir = "rtl";
+</pre>
+              </div>
+              <div class="panel-footer text-right">
+                <button type="button" class="btn btn-danger btn-sm" onclick="cf6()" id="cb6">alert(div.id)</button>
+                <button type="button" class="btn btn-danger btn-sm" onclick="cf7()" id="cb7">alert(div.className)</button>
+                <button type="button" class="btn btn-danger btn-sm" onclick="cf8()" id="cb8">alert(div.title)</button><div class="height_1"></div>
+                <button type="button" class="btn btn-danger btn-sm" onclick="cf9()" id="cb9">alert(div.lang)</button>
+                <button type="button" class="btn btn-danger btn-sm" onclick="cf10()" id="cb10">alert(div.dir)</button>
+              </div>
+            </div>
+          </div>
+        </div>
+</div>
+<script type="text/javascript" src="../common/js/jquery/2.2.4/jQuery_v2.2.4.js"></script>
+<script type="text/javascript" src="js/nodeType.js"></script>
+</body>
+</html>
