@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript中的事件</title>
+    <link rel="stylesheet" type="text/css" href="../common/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../common/css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/event.css">
+</head>
+<body>
+<div class="container">
+      <div class="row">
+        <div class="col-md-8 col-xs-8 col-md-offset-2 col-xs-offset-2">
+          <div class="panel panel-warning">
+            <div class="panel-heading">
+              事件处理程序
+            </div>
+            <div class="panel-body">
+            <div class="testBox">
+                <div class="testL">
+                    <input type="button" value="clickVal1" onclick="alert(this.value)" class="button"/><div class="height_1"></div>
+                    <input type="button" value="clickVal2" onclick="showEventType ()" class="button"/>
+                </div>
+                <div class="testR">
+                    <pre id="ap1">
+//←代码效果
+//html文件
+&lt;input type="button" value="clickVal1" onclick="alert(this.value)"/>
+&lt;input type="button" value="clickVal2" onclick="showEventType ()"/>
+
+//javascript文件
+function showEventType () {
+    alert(event.type);
+}
+</pre>
+                </div>
+            </div>
+<pre id="ap2">
+var btn1 = document.getElementById("ab1");
+btn.onclick = function(){
+    alert(this.id);
+};
+</pre>
+            </div>
+            <div class="panel-footer text-right">
+              <button type="button" class="btn btn-danger btn-sm" id="ab1">ab1</button>
+            </div>
+            <div class="panel-body">
+                      <pre id="ap3">
+btn.onclick = null;
+//运行后可点击 ab1 按钮试下效果
+</pre>
+            </div>
+            <div class="panel-footer text-right">
+              <button type="button" class="btn btn-danger btn-sm" onclick="af2()" id="ab2">删除上一段代码定义的事件处理程序</button>
+            </div>
+            <div class="panel-body">
+                      <pre id="ap4">
+var btn3 = document.getElementById("ab3");
+var showId = function(){
+    alert(this.id);
+}
+btn3.addEventListener("click",showId,false);
+</pre>
+            </div>
+            <div class="panel-footer text-right">
+              <button type="button" class="btn btn-danger btn-sm" id="ab3">ab3</button>
+            </div>
+            <div class="panel-body">
+                      <pre id="ap5">
+btn3.removeEventListener("click",showId,false);
+//运行后可点击 ab3 按钮试下效果
+</pre>
+            </div>
+            <div class="panel-footer text-right">
+              <button type="button" class="btn btn-danger btn-sm" onclick="af4()" id="ab4">删除上一段代码定义的事件处理程序</button>
+            </div>
+            <div class="panel-body">
+                      <pre id="ap6">
+var btn5 = document.getElementById("ab5");
+var showId = function(){
+    alert(this.id);
+}
+btn5.attachEvent("onclick",showId);
+</pre>
+            </div>
+            <div class="panel-footer text-right">
+              <button type="button" class="btn btn-danger btn-sm" id="ab5">ab5</button>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+<script type="text/javascript" src="../common/js/jquery/2.2.4/jQuery_v2.2.4.js"></script>
+<script type="text/javascript" src="js/event.js"></script>
+</body>
+</html>
