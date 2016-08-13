@@ -25,6 +25,6 @@ var af4 = function(){
 };
 var btn5 = document.getElementById("ab5");
 var showThis = function(){
-    alert(this === window);
+    alert("this === window");
 }
 btn5.attachEvent("onclick",showId);
