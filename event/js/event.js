@@ -24,4 +24,7 @@ var af4 = function(){
   eval($("#ap5").text());
 };
 var btn5 = document.getElementById("ab5");
+var showThis = function(){
+    alert(this === window);
+}
 btn5.attachEvent("onclick",showId);

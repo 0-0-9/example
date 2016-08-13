@@ -78,10 +78,10 @@ btn3.removeEventListener("click",showId,false);
             <div class="panel-body">
                       <pre id="ap6">
 var btn5 = document.getElementById("ab5");
-var showId = function(){
-    alert(this.id);
+var showThis = function(){
+    alert(this === window);
 }
-btn5.attachEvent("onclick",showId);
+btn5.attachEvent("onclick",showThis);
 </pre>
             </div>
             <div class="panel-footer text-right">
