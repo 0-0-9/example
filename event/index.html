@@ -79,13 +79,45 @@ btn3.removeEventListener("click",showId,false);
                       <pre id="ap6">
 var btn5 = document.getElementById("ab5");
 var showThis = function(){
-    alert("this === window");
+    alert(this === window);
 }
 btn5.attachEvent("onclick",showThis);
 </pre>
             </div>
             <div class="panel-footer text-right">
               <button type="button" class="btn btn-danger btn-sm" id="ab5">ab5</button>
+            </div>
+            <div class="panel-body">
+                      <pre id="ap7">
+var EventUtil = {
+    addHandler: function(ele, type, handler) {
+        if (ele.addEventListener) {
+            ele.addEventListener(type, handler, false);
+        } else if (ele.attachEvent) {
+            ele.attachEvent("on" + type, handler);
+        } else {
+            ele["on" + type] = handler;
+        }
+    },
+    removeHandler: function(ele, type, handler) {
+        if (ele.removeEventListener) {
+            ele.removeEventListener(type, handler, false);
+        } else if (ele.detachEvent) {
+            ele.detachEvent("on" + type, handler);
+        } else {
+            ele["on" + type] = null;
+        }
+    }
+};
+var btn6 = document.getElementById("ab6");
+var sayHello = function(){
+    alert("hello hello");
+}
+EventUtil.addHandler(btn6, "click", sayHello);
+</pre>
+            </div>
+            <div class="panel-footer text-right">
+              <button type="button" class="btn btn-danger btn-sm" id="ab6">ab6</button>
             </div>
           </div>
         </div>
