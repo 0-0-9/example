@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>canvas 绘图</title>
+    <link rel="stylesheet" type="text/css" href="../common/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../common/css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/canvas.css">
+</head>
+<body>
+  <div class="row">
+    <div class="col-md-8 col-xs-8 col-md-offset-2 col-xs-offset-2">
+      <div class="panel panel-warning">
+        <div class="panel-heading">
+          title
+        </div>
+        <div class="panel-body">
+        <div class="testBox">
+            <div class="testL">
+                <canvas id="myCanvas" width="300" height="250">myCanvas!</canvas>
+            </div>
+            <div class="testR">
+                <pre id="ap1">
+//html文件
+&lt;canvas id="myCanvas" width="300" height="250">myCanvas!&lt;/canvas>
+
+//css文件
+canvas{
+    border: 1px solid #000;
+}
+
+//js文件
+function drawMyCanvas(){
+    var canvas = document.getElementById("myCanvas");
+    if (canvas.getContext) {
+        var context = canvas.getContext("2d");
+    };
+}
+
+window.onload = function(){
+    drawMyCanvas();
+};
+</pre>
+            </div>
+        </div>
+        <pre id="ap2">
+function drawMyCanvas(){
+    var canvas = document.getElementById("myCanvas");
+    if (canvas.getContext) {
+        var context = canvas.getContext("2d");
+        context.clearRect(0, 0, 300, 250);
+        //绘制矩形
+        context.fillStyle = "rgb(165, 143, 197)"
+        context.fillRect(60, 50, 150, 125);
+        context.strokeStyle = "pink";
+        context.strokeRect(70, 60, 130, 105);
+        context.clearRect(90, 80, 90, 65);
+    };
+}
+drawMyCanvas();
+</pre>
+        </div>
+        <div class="panel-footer text-right">
+          <button type="button" class="btn btn-info btn-sm" onclick="af1()" id="ab1">GO!</button>
+        </div>
+        <div class="panel-body">
+                  <pre id="ap3">
+function drawMyCanvas(){
+    var canvas = document.getElementById("myCanvas");
+    if (canvas.getContext) {
+        var context = canvas.getContext("2d");
+        context.clearRect(0, 0, 300, 250);
+        //绘制粉色矩形
+        context.fillStyle = "pink";
+        context.fillRect(90, 75, 120, 100);
+        //绘制半透明紫色矩形
+        context.fillStyle = "rgba(165, 143, 197,0.5)"
+        context.fillRect(60, 50, 120, 100);
+    };
+}
+drawMyCanvas();
+</pre>
+        </div>
+        <div class="panel-footer text-right">
+          <button type="button" class="btn btn-info btn-sm" onclick="af2()" id="ab2">GO!</button>
+        </div>
+        <div class="panel-body">
+                  <pre id="ap4">
+function drawMyCanvas(){
+    var canvas = document.getElementById("myCanvas");
+    if (canvas.getContext) {
+        var context = canvas.getContext("2d");
+        context.clearRect(0, 0, 300, 250);
+        context.beginPath();
+        //绘制封闭半圆
+        context.arc(150, 125, 100, Math.PI, false);
+        context.strokeStyle = "blue";
+        context.closePath();
+        context.stroke();
+    };
+}
+drawMyCanvas();
+</pre>
+        </div>
+        <div class="panel-footer text-right">
+          <button type="button" class="btn btn-info btn-sm" onclick="af3()" id="ab3">GO!</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<script type="text/javascript" src="../common/js/jquery/2.2.4/jQuery_v2.2.4.js"></script>
+<script type="text/javascript" src="js/canvas.js"></script>
+</body>
+</html>
