@@ -22,7 +22,7 @@ var EventUtil = {
 var searchFn = function() {
     var keywordVal = document.getElementById("keyword").value;
     var request = new XMLHttpRequest();
-    request.open("GET", "https://php-test-lanyy.c9users.io/server.php?number=" + keywordVal);
+    request.open("GET", "server.php?number=" + keywordVal);
     request.send();
     // alert(keywordVal);
 };
