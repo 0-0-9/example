@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html">
+    <title>ajax-demo</title>
+    <link rel="stylesheet" type="text/css" href="css/demo.css">
+    <link rel="stylesheet" type="text/css" href="../common/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2 form-horizontal">
+            <h3>员工查询</h3>
+            <div class="form-group">
+                <label class="col-sm-3 control-label">请输入员工编号:</label>
+                <div class="col-sm-7">
+                    <input type="text" class="form-control" id="keyword">
+                </div>
+                <button class="btn btn-primary" id="searchBtn">查询</button>
+            </div>
+            <p id="searchResult">123</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2 form-horizontal">
+            <h3>员工创建</h3>
+            <div class="form-group">
+                <label class="col-sm-3 control-label">请输入员工姓名</label>
+                <div class="col-sm-7">
+                    <input type="text" class="form-control" id="staffName">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label">请输入员工编号</label>
+                <div class="col-sm-7">
+                    <input type="text" class="form-control" id="staffNum">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label">请输入员工性别</label>
+                <div class="col-sm-7">
+                <select id="staffSex">
+                    <option>男</option>
+                    <option>女</option>
+                </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label">请输入员工职位</label>
+                <div class="col-sm-7">
+                <input type="text" class="form-control" id="staffJob">
+                </div>
+                <button class="btn btn-primary" id="saveBtn">保存</button>
+            </div>
+            <p id="createResult">456</p>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="js/demo.js"></script>
+</body>
+</html>
