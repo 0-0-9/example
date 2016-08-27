@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>json</title>
+    <link rel="stylesheet" type="text/css" href="../common/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../common/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+    <div class="col-md-8 col-xs-8 col-md-offset-2 col-xs-offset-2">
+      <div class="panel panel-warning">
+        <div class="panel-heading">
+          ajax
+        </div>
+        <div class="panel-body">
+          <pre id="ap1">
+var singers = [{"name":"Selina"},{"name":"Hebe"},{"name":"Ella"}];
+document.getElementById("ai1").innerHTML = singers[0].name;
+</pre>
+    <p id="ai1">这里是ai1</p>
+        </div>
+        <div class="panel-footer text-right">
+          <button type="button" class="btn btn-info btn-sm" onclick="af1()" id="ab1">GO!</button>
+        </div>
+        <div class="panel-body">
+                  <pre id="ap2">
+//JSON中，花括号表示对象，方括号表示数组
+//JSON值可以是 数字（整数或浮点数） | 字符串（在双引号中） | 逻辑值（true,false） | 数组（在方括号中） |
+    对象（在花括号中） | null
+{
+    "singers": [{
+        "name": "Selina",
+        "age": 18
+    }, {
+        "name": "Hebe",
+        "age": 17
+    }, {
+        "name": "Ella",
+        "age": 20
+    }]
+}
+</pre>
+        </div>
+        <div class="panel-footer text-right">
+          <button type="button" class="btn btn-danger btn-sm" onclick="af2()" id="ab2">btn</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+<script type="text/javascript" src="../common/js/jquery/2.2.4/jQuery_v2.2.4.js"></script>
+<script type="text/javascript" src="js/json.js"></script>
+</body>
+</html>
