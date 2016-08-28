@@ -30,9 +30,9 @@ var searchFn = function() {
             if (request.status === 200) {
                 var response = JSON.parse(request.responseText);
                 if (response.success) {
-                    document.getElementById("createResult").innerHTML = response.msg;
+                    document.getElementById("searchResult").innerHTML = response.msg;
                 } else {
-                    document.getElementById("createResult").innerHTML = "error: " + response.msg;
+                    document.getElementById("searchResult").innerHTML = "error: " + response.msg;
                 }
                 // document.getElementById("searchResult").innerHTML = request.responseText;
             } else {
