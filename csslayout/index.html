@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>布局</title>
+</head>
+<link rel="stylesheet" type="text/css" href="../common/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="../common/css/style.css">
+<style>
+.s-bg{
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+    color: white;
+}
+.g-mn1{
+    width: 300px;
+    padding: 100px 0;
+    margin: 0 auto;
+    background-color: #c00;
+    text-align: center;
+    font-size: 18px;
+    color: white;
+}
+.g-bd1{
+    width: 500px;
+    margin: 0 auto;
+}
+.g-mn2{
+    float: left;
+    width: 350px;
+    padding: 50px 0;
+    background: #ff0097;
+}
+.g-sd1{
+    float: right;
+    width: 148px;
+    padding: 50px 0;
+    background: #a200ff;
+}
+</style>
+<body>
+
+<div class="container">
+      <div class="row">
+        <div class="col-md-8 col-xs-8 col-md-offset-2 col-xs-offset-2">
+          <div class="panel panel-warning">
+            <div class="panel-heading">
+              单列布局
+            </div>
+            <div class="panel-body">
+    <div class="g-mn1">
+    margin: 0 auto;
+    </div>
+            </div>
+          </div>
+        </div>
+      </div>
+        <div class="row">
+          <div class="col-md-8 col-xs-8 col-md-offset-2 col-xs-offset-2">
+            <div class="panel panel-warning">
+              <div class="panel-heading">
+                两列布局
+              </div>
+              <div class="panel-body">
+              <pre>
+    //两列定宽
+    .wrap { width: 500px; margin: 0 auto; }
+    .left { float: left; width: 350px; }
+    .right { float: right; width: 148px; }
+</pre>
+              <div class="s-bg g-bd1">
+                <div class="g-mn2">左侧（主体）定宽</div>
+                <div class="g-sd1">右侧（边栏）定宽</div>
+              </div>
+              </div>
+              <div class="panel-footer text-right">
+                <button type="button" class="btn btn-danger btn-sm" onclick="xf1()" id="xb1">btn</button>
+              </div>
+            </div>
+          </div>
+        </div>
+</div>
+</body>
+</html>
