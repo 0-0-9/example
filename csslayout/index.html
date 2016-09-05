@@ -23,8 +23,9 @@
     color: white;
 }
 .g-bd1{
-    width: 500px;
+    width: 508px;
     margin: 0 auto;
+    overflow: hidden;
 }
 .g-mn2{
     float: left;
@@ -37,6 +38,123 @@
     width: 148px;
     padding: 50px 0;
     background: #a200ff;
+}
+.g-sd2{
+    /*position: relative;*/
+    float: left;
+    width: 190px;
+    padding: 50px 0;
+    margin-right: -190px;
+    background: #6e155f;
+}
+.g-mn3{
+    float: right;
+    width: 100%;
+}
+.g-mn3c{
+    margin-left: 200px;
+    padding: 50px 0;
+    background: #4eb3b9;
+}
+.g-mn4{
+    float: left;
+    width: 100%;
+}
+.g-mn4c{
+    margin-right: 200px;
+    padding: 50px 0;
+    background: #de9317;
+}
+.g-sd3{
+    /*position: relative;*/
+    float: right;
+    width: 190px;
+    padding: 50px 0;
+    margin-left: -190px;
+    background: #5859b9;
+}
+.g-bd2{
+    overflow: hidden;
+}
+/*三列*/
+.g-bd5{
+    overflow: hidden;
+}
+.g-sd51{
+    /*position: relative;*/
+    float: left;
+    width: 100px;
+    margin: 0 -100px 0 0;
+    padding: 50px 0;
+    background: #4eb3d9;
+}
+.g-sd52{
+    /*position: relative;*/
+    float: right;
+    width: 190px;
+    margin: 0 0 0 -190px;
+    padding: 50px 0;
+    background: #a05000;
+}
+.g-mn5{
+    float: left;
+    width: 100%;
+}
+.g-mn5c{
+    margin: 0 200px 0 110px;
+    padding: 50px 0;
+    background: #96b232;
+}
+.g-bd6{
+    overflow: hidden;
+}
+.g-mn6{
+    float: left;
+    margin-right: -290px;
+    width: 100%;
+}
+.g-mn6c{
+    margin-right: 300px;
+    padding: 50px 0;
+    background: #1ba1e2;
+}
+.g-sd61{
+    float: right;
+    width: 90px;
+    margin-left: 10px;
+    padding: 50px 0;
+    background: #e51400;
+}
+.g-sd62{
+    float: right;
+    width: 190px;
+    /*margin-left: 10px;*/
+    padding: 50px 0;
+    background: #393;
+}
+.g-bd7{overflow: hidden;}
+.g-sd71{
+    float: left;
+    margin-right: 10px;
+    width: 190px;
+    padding: 50px 0;
+    background: #d54d34;
+}
+.g-sd72{
+    float: left;
+    width: 90px;
+    padding: 50px 0;
+    background: #034888;
+}
+.g-mn7{
+    float: right;
+    width: 100%;
+    margin-left: -290px;
+}
+.g-mn7c{
+    margin-left: 300px;
+    padding: 50px 0;
+    background: #5859b9;
 }
 </style>
 <body>
@@ -63,9 +181,9 @@
                 两列布局
               </div>
               <div class="panel-body">
+              <h5>两列定宽</h5>
               <pre>
-    //两列定宽
-    .wrap { width: 500px; margin: 0 auto; }
+    .wrap { width: 508px; margin: 0 auto; overflow: hidden; }
     .left { float: left; width: 350px; }
     .right { float: right; width: 148px; }
 </pre>
@@ -74,12 +192,97 @@
                 <div class="g-sd1">右侧（边栏）定宽</div>
               </div>
               </div>
-              <div class="panel-footer text-right">
-                <button type="button" class="btn btn-danger btn-sm" onclick="xf1()" id="xb1">btn</button>
+              <div class="panel-body">
+                  <h5>左侧定宽，右侧自适应</h5>
+<pre>
+    .wrap { overflow: hidden; }
+    .left { float: left; width: 190px; margin-right: -190px; }
+    .right { float: right; width: 100%; }
+    .right-child { margin-left: 200px; }
+</pre>
+                <div class="s-bg g-bd2">
+                    <div class="g-sd2">左侧（边栏）定宽</div>
+                    <div class="g-mn3">
+                        <div class="g-mn3c">
+                            右侧（主体）自适应
+                        </div>
+                    </div>
+                </div>
+              </div>
+              <div class="panel-body">
+              <h5>左侧自适应，右侧定宽</h5>
+<pre>
+    .wrap { overflow: hidden; }
+    .left { float: left; width: 100%; }
+    .left-child { margin-right: 200px; }
+    .right { float: right; width: 190px; margin-left: -190px;}
+</pre>
+              <div class="s-bg g-bd3">
+                  <div class="g-mn4">
+                    <div class="g-mn4c">左侧（主体）自适应</div>
+                  </div>
+                <div class="g-sd3">右侧（边栏）定宽</div>
+              </div>
               </div>
             </div>
           </div>
         </div>
+      <div class="row">
+        <div class="col-md-8 col-xs-8 col-md-offset-2 col-xs-offset-2">
+          <div class="panel panel-warning">
+            <div class="panel-heading">
+              三列布局
+            </div>
+            <div class="panel-body">
+            <h5>左右定宽，中间自适应</h5>
+<pre>
+    .wrap { overflow: hidden; }
+    .left { float: left; width: 100px; margin: 0 -100px 0 0; }
+    .right { float: right; width: 190px; margin: 0 0 0 -190px; }
+    .mid { float: left; width: 100%; }
+    .mid-child { margin: 0 200px 0 110px; }
+</pre>
+                <div class="s-bg g-bd5">
+                    <div class="g-sd51">左侧定宽</div>
+                    <div class="g-mn5">
+                        <div class="g-mn5c">中间自适应</div>
+                    </div>
+                    <div class="g-sd52">右侧定宽</div>
+                </div>
+                <h5>中右定宽，左边自适应</h5>
+<pre>
+    .wrap { overflow: hidden; }
+    .left { float: left; margin-right: -290px; width: 100%; }
+    .left-child { margin-right: 300px; }
+    .mid { float: right; width: 190px; }
+    .right { float: right; width: 90px; margin-left: 10px; }
+</pre>
+                <div class="s-bg g-bd6">
+                    <div class="g-mn6">
+                        <div class="g-mn6c">左侧自适应</div>
+                    </div>
+                    <div class="g-sd61">右侧定宽</div>
+                    <div class="g-sd62">中间定宽</div>
+                </div>
+                <h5>中左定宽，右边自适应</h5>
+<pre>
+    .wrap { overflow: hidden; }
+    .left { float: left; margin-right: 10px; width: 190px; }
+    .mid { float: left; width: 90px; }
+    .right { float: right; width: 100%; margin-left: -290px; }
+    .right-child { margin-left: 300px; }
+</pre>
+                <div class="s-bg g-bd7">
+                    <div class="g-sd71">左侧定宽</div>
+                    <div class="g-sd72">中间定宽</div>
+                    <div class="g-mn7">
+                        <div class="g-mn7c">右侧自适应</div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
 </div>
 </body>
 </html>
