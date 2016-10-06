@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>排序算法</title>
+    <link rel="stylesheet" type="text/css" href="../common/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../common/css/style.css">
+</head>
+<body>
+<div class="container">
+      <div class="row">
+        <div class="col-md-8 col-xs-8 col-md-offset-2 col-xs-offset-2">
+          <div class="panel panel-warning">
+            <div class="panel-heading">
+              插入排序
+            </div>
+            <div class="panel-body">
+              <pre id="ap1">
+function insertionSort(arr) {
+    var len = arr.length,
+        i,
+        j,
+        temp;
+    for (i = 1; i < len; i++) {
+        temp = arr[i];
+        j = i - 1;
+        while (j >= 0 && temp < arr[j]) {
+            arr[j + 1] = arr[j];
+            j--;
+        }
+        arr[j + 1] = temp;
+    }
+    return arr;
+}
+var arr = [4, 24, 13, 6, 2, 9, 31];
+</pre>
+            </div>
+            <div class="panel-footer text-right">
+              <button type="button" class="btn btn-danger btn-sm" onclick="af1()" id="ab1">alert(insertionSort(arr))</button>
+            </div>
+          </div>
+        </div>
+      </div>
+        <div class="row">
+          <div class="col-md-8 col-xs-8 col-md-offset-2 col-xs-offset-2">
+            <div class="panel panel-warning">
+              <div class="panel-heading">
+                二分插入排序
+              </div>
+              <div class="panel-body">
+                <pre id="ap2">
+function binaryInsertSort(arr) {
+    var len = arr.length,
+        i,
+        j,
+        temp,
+        left,
+        mid,
+        right;
+    for (i = 1; i < len; i++) {
+        left = 0;
+        right = i - 1;
+        temp = arr[i];
+        while (left <= right) {
+            mid = parseInt((left + right) / 2, 10);
+            if (temp < arr[mid]) {
+                right = mid - 1;
+            } else {
+                left = mid + 1;
+            }
+        }
+        for (j = i - 1; j >= left; j--) {
+            arr[j + 1] = arr[j];
+        }
+        arr[left] = temp;
+    }
+    return arr;
+}
+var arr = [4, 24, 13, 6, 2, 9, 31];
+</pre>
+              </div>
+              <div class="panel-footer text-right">
+                <button type="button" class="btn btn-danger btn-sm" onclick="af2()" id="ab2">alert(binaryInsertSort(arr))</button>
+              </div>
+            </div>
+          </div>
+        </div>
+          <div class="row">
+            <div class="col-md-8 col-xs-8 col-md-offset-2 col-xs-offset-2">
+              <div class="panel panel-warning">
+                <div class="panel-heading">
+                  冒泡排序
+                </div>
+                <div class="panel-body">
+                  <pre id="ap3">
+function bubbleSort(arr) {
+    var len = arr.length,
+        i,
+        j,
+        temp;
+    for (i = 0; i < len; i++) {
+        for (j = i + 1; j < len; j++) {
+            if (arr[i] > arr[j]) {
+                temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+    }
+    return arr;
+}
+var arr = [4, 24, 13, 6, 2, 9, 31];
+</pre>
+                </div>
+                <div class="panel-footer text-right">
+                  <button type="button" class="btn btn-danger btn-sm" onclick="af3()" id="ab3">alert(bubbleSort(arr))</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-8 col-xs-8 col-md-offset-2 col-xs-offset-2">
+              <div class="panel panel-warning">
+                <div class="panel-heading">
+                  快速排序
+                </div>
+                <div class="panel-body">
+                  <pre id="dp1">
+function quickSort(arr) {
+    var len = arr.length,
+        pivot,
+        pivotIndex,
+        left = [],
+        right = [],
+        i;
+    if (len <= 1) return arr;
+    pivotIndex = Math.floor(len / 2);
+    pivot = arr.splice(pivotIndex, 1)[0];
+    for (i = 0; i < len - 1; i++) {
+        if (arr[i] > pivot) right.push(arr[i]);
+        else left.push(arr[i]);
+    }
+    return quickSort(left).concat([pivot], quickSort(right));
+}
+var arr = [4, 24, 13, 6, 2, 9, 31];
+</pre>
+                </div>
+                <div class="panel-footer text-right">
+                  <button type="button" class="btn btn-danger btn-sm" onclick="df1()" id="db1">alert(quickSort(arr))</button>
+                </div>
+              </div>
+            </div>
+          </div>
+      <div class="row">
+        <div class="col-md-8 col-xs-8 col-md-offset-2 col-xs-offset-2">
+          <div class="panel panel-warning">
+            <div class="panel-heading">
+              归并排序
+            </div>
+            <div class="panel-body">
+              <pre id="ep1">
+function merge(left, right) {
+    var result = [];
+    while (left.length && right.length) {
+        if (left[0] < right[0]) {
+            result.push(left.shift());
+        } else {
+            result.push(right.shift());
+        }
+    }
+    return result.concat(left, right);
+}
+
+function mergeSort(arr) {
+    var len = arr.length,
+        left,
+        right,
+        mid;
+    if (len <= 1) return arr;
+    mid = Math.floor(len / 2);
+    left = arr.slice(0, mid);
+    right = arr.slice(mid);
+    return merge(mergeSort(left), mergeSort(right));
+}
+var arr = [4, 24, 13, 6, 2, 9, 31];
+</pre>
+            </div>
+            <div class="panel-footer text-right">
+              <button type="button" class="btn btn-danger btn-sm" onclick="ef1()" id="eb1">alert(mergeSort(arr))</button>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+<script src="../common/js/jquery/2.2.4/jQuery_v2.2.4.js"></script>
+<script src="sort.js"></script>
+</body>
+</html>
